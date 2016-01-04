@@ -1,13 +1,11 @@
 
 ## build image
 
-sudo docker build -t uryyyyyyy/redis ./
+sudo docker build -t uryyyyyyy/redis2.8 ./
 
 ## run container(login via ssh)
 
-sudo docker run --name redis1 -i -t uryyyyyyy/redis /bin/bash
-
-sudo docker run -d -p 6379:6379 --name redis1 uryyyyyyy/redis
+sudo docker run -d -p 6379:6379 --name redis1 uryyyyyyy/redis2.8
 
 ## remove container
 
