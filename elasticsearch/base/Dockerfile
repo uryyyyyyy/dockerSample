@@ -36,6 +36,10 @@ RUN set -ex \
 		chown -R elasticsearch:elasticsearch "$path"; \
 	done
 
+# plugin
+# RUN plugin install mobz/elasticsearch-head
+# RUN plugin install analysis-kuromoji
+
 COPY config /usr/share/elasticsearch/config
 
 VOLUME /usr/share/elasticsearch/data

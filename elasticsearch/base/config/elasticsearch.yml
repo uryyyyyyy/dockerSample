@@ -1,0 +1,11 @@
+# bindするhostとCluster内でnodeがお互いをコネクトする際にpublishするhostを一度に指定している
+network.host: 0.0.0.0
+ 
+# ESでは同じネットワーク内の同じクラスタ名を持つnodeでクラスタを形成する
+cluster.name: ${CLUSTER_NAME}
+ 
+# nodeを区別するため名前をつけますが、動的に生成したいので環境変数で設定しましょう。
+# コンテナを起動する際に環境変数からNODE_NAME=hogeで渡してあげます
+node.name: ${NODE_NAME}
+ 
+discovery.zen.ping.unicast.hosts: ["172.17.0.1"]
