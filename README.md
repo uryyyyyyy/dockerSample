@@ -28,3 +28,11 @@ docker rmi <image tag>
 
 ## enter into container (like ssh login)
 docker exec -i -t <container ID / container name> /bin/bash
+
+## check container private IP(only host machine can use it)
+
+sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' <containerID>
+
+or
+
+sudo docker run -d --name elastic -e "NODE_NAME=node1" -e "CLUSTER_NAME=cluster0" -e "UNICAST_HOSTS=["172.17.0.1"]" uryyyyyyy/elasticsearch:2.1.1 | xargs sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'
