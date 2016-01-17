@@ -18,6 +18,10 @@ docker run --name <container name> -t <image tag>
 docker stop <container ID / container name>
 docker kill <container ID / container name>
 
+## force stop all container
+
+sudo docker rm -f $(sudo docker ps -a -q)
+
 ## remove container
 
 docker rm <container ID / container name>

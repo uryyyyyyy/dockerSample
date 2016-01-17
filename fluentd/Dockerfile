@@ -26,7 +26,8 @@ RUN rbenv install 2.2.4
 ENV PATH /rbenv/versions/2.2.4/bin/:${PATH}
 # ruby install done
 
-ADD app.rb app.rb
-RUN gem install sinatra
-EXPOSE 4567
-CMD ["ruby", "app.rb"]
+RUN gem install fluentd
+RUN mkdir /etc/fluent/
+ADD fluent.conf /etc/fluent/fluent.conf
+EXPOSE 8888
+CMD ["fluentd"]
