@@ -1,16 +1,16 @@
 
 ## build image
 
-sudo docker build -t uryyyyyyy/nginx:1.0 .
+sudo docker build -t uryyyyyyy/mynginx .
 
 ## run container
 
-sudo docker run -d -p 80:80 --name nginx1 uryyyyyyy/nginx:1.0 /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
+sudo docker run -d -p 8000:80 --name mynginx uryyyyyyy/mynginx
 
 ## remove container
 
-sudo docker rm nginx1
+sudo docker rm mynginx
 
 ## remove image
 
-sudo docker rmi uryyyyyyy/nginx:1.0
+sudo docker rmi uryyyyyyy/mynginx
