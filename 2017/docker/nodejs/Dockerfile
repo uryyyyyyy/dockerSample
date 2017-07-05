@@ -1,12 +1,15 @@
-# docker run --rm uryyyyyyy/nodejs:8.1 node -v
-# docker run --rm uryyyyyyy/nodejs:8.1 npm -v
+# build
+# docker build --tag uryyyyyyy/alpine-nodejs:8.1.3 ./
+
+# run
+# docker run --rm uryyyyyyy/alpine-nodejs:8.1.3 node -v
+# docker run --rm uryyyyyyy/alpine-nodejs:8.1.3 npm -v
 
 FROM alpine:3.6
 
 ENV NODE_VERSION=8.1.3
 
-RUN set -ex \
-      && apk --no-cache add --virtual build-dependencies make gcc g++ linux-headers python curl gnupg \ # install tools for build
+RUN apk --no-cache add --virtual build-dependencies make gcc g++ linux-headers python curl gnupg \
       && gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys DD8F2338BAE7501E3DD5AC78C273792F7D83545D \
       && mkdir -p /tmp/src \
       && cd /tmp/src \

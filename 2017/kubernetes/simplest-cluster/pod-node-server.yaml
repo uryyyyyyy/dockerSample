@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-server-pod2
+  labels:
+    name: node-server-pod2
+spec:
+  containers:
+    - name: node-server
+      image: gcr.io/uryyyyyyy-sandbox/node-simple-server:0.1.0
+      ports:
+      - containerPort: 3000
